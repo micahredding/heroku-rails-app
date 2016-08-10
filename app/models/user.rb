@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :messages, class_name: 'Message', foreign_key: 'creator_id'
+  has_many :created_teams, class_name: 'Team', foreign_key: 'creator_id'
 end

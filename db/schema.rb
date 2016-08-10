@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160810145134) do
+ActiveRecord::Schema.define(version: 20160810160340) do
 
   create_table "messages", force: :cascade do |t|
     t.integer  "creator_id"
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 20160810145134) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["creator_id"], name: "index_messages_on_creator_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "creator_id"
+    t.string   "visibility"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["creator_id"], name: "index_teams_on_creator_id"
   end
 
   create_table "users", force: :cascade do |t|
