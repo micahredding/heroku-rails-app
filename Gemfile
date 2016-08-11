@@ -39,6 +39,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'sqlite3'
   gem 'rails_layout'
+  gem 'pry'
 end
 
 group :development do
