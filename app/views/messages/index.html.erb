@@ -1,8 +1,2 @@
 <h1>Messages#index</h1>
-<ul>
-  <% @messages.each do |message| %>
-    <li><%= message.content %> - <%= message.creator.email %></li>
-  <% end %>
-</ul>
-
-<%= link_to 'New Message', new_team_channel_message_path(@team, @channel) %>
+<%= render 'list', team: @team, channel: @channel, messages: @messages %>

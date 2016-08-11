@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   def index
     @team = Team.find(params[:team_id])
     @channel = Channel.find(params[:channel_id])
-    @messages = @channel.messages
+    redirect_to team_channel_path(@team, @channel)
   end
 
   def new
@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
     @message.channel = @channel
     @message.creator = current_user
     if @message.save
-      redirect_to team_channel_messages_path(@team, @channel), notice: 'Yes'
+      redirect_to team_channel_path(@team, @channel), notice: 'Yes'
     else
       redirect_to new_team_channel_message_path(@team, @channel), notice: 'No'
     end

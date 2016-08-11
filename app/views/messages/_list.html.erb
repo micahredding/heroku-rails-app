@@ -1,0 +1,7 @@
+<ul>
+  <% messages.each do |message| %>
+    <li><%= message.content %> - <%= message.creator.email %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'New Message', new_team_channel_message_path(team, channel) %>
