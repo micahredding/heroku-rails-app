@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160810170615) do
+ActiveRecord::Schema.define(version: 20160811030831) do
 
-  create_table "channel_members", force: :cascade do |t|
+  create_table "channel_memberships", force: :cascade do |t|
     t.integer  "channel_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["channel_id"], name: "index_channel_members_on_channel_id"
-    t.index ["user_id"], name: "index_channel_members_on_user_id"
+    t.index ["channel_id"], name: "index_channel_memberships_on_channel_id"
+    t.index ["user_id"], name: "index_channel_memberships_on_user_id"
   end
 
   create_table "channels", force: :cascade do |t|
@@ -32,13 +32,13 @@ ActiveRecord::Schema.define(version: 20160810170615) do
     t.index ["team_id"], name: "index_channels_on_team_id"
   end
 
-  create_table "message_readers", force: :cascade do |t|
+  create_table "message_readerships", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "message_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["message_id"], name: "index_message_readers_on_message_id"
-    t.index ["user_id"], name: "index_message_readers_on_user_id"
+    t.index ["message_id"], name: "index_message_readerships_on_message_id"
+    t.index ["user_id"], name: "index_message_readerships_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -50,13 +50,13 @@ ActiveRecord::Schema.define(version: 20160810170615) do
     t.index ["creator_id"], name: "index_messages_on_creator_id"
   end
 
-  create_table "team_members", force: :cascade do |t|
+  create_table "team_memberships", force: :cascade do |t|
     t.integer  "team_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["team_id"], name: "index_team_members_on_team_id"
-    t.index ["user_id"], name: "index_team_members_on_user_id"
+    t.index ["team_id"], name: "index_team_memberships_on_team_id"
+    t.index ["user_id"], name: "index_team_memberships_on_user_id"
   end
 
   create_table "teams", force: :cascade do |t|

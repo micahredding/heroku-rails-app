@@ -1,4 +1,4 @@
-class MessageReader < ApplicationRecord
+class MessageReadership < ApplicationRecord
   belongs_to :user
   belongs_to :message
 end
