@@ -1,1 +1,5 @@
 <%# add navigation links to this file %>
+
+<li><%= link_to 'Teams', teams_path %></li>
+<li><%= link_to 'Sign in', new_user_session_path() %></li>
+<li><%= link_to 'Sign out', destroy_user_session_path(), method: 'delete' %></li>
