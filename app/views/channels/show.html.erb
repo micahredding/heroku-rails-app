@@ -1,3 +1,5 @@
 <h1><%= @channel.name %> <%= link_to '(edit)', edit_team_channel_path(@team, @channel) %></h1>
 
 <%= render 'messages/list', team: @team, channel: @channel, messages: @channel.messages %>
+
+<%= render 'messages/form', team: @team, channel: @channel, message: Message.new %>
