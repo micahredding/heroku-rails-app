@@ -3,4 +3,6 @@
   <%= link_to '(edit)', edit_team_path(@team) %>
 </h1>
 
-<p>Creator: <%= @team.creator.email %></p>
+<p>Creator: <%= @team.creator.email if @team.creator.present? %></p>
+
+<%= link_to 'View channels', team_channels_path(@team) %>

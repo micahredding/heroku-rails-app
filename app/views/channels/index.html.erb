@@ -1,0 +1,9 @@
+<h1>Channels for <%= @team.name %></h1>
+
+<ul>
+  <% @channels.each do |channel| %>
+    <li><%= link_to channel.name, team_channel_path(@team, channel) %></li>
+  <% end %>
+</ul>
+
+<%= link_to "New channel for #{@team.name}", new_team_channel_path(@team) %>
