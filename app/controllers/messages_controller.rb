@@ -2,9 +2,10 @@ class MessagesController < ApplicationController
   def index
     @team = Team.find(params[:team_id])
     @channel = Channel.find(params[:channel_id])
+    @messages = @channel.messages
     respond_to do |format|
       format.html { redirect_to team_channel_path(@team, @channel) }
-      format.js   { render json: @messages }
+      format.json { render json: @messages }
     end
   end
 

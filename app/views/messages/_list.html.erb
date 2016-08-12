@@ -1,5 +1,5 @@
 <ul id="message-list">
   <% messages.each do |message| %>
-    <li><%= message.content %> - <%= message.creator.email %></li>
+    <li id="message-id-<%= message.id %>"><%= message.content %> - <%= message.creator.email %></li>
   <% end %>
 </ul>
