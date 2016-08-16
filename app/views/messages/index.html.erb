@@ -1,0 +1,12 @@
+<h1>Messages for Channel <%= @channel.name %></h1>
+
+<ul id="messages-list">
+  <% @messages.each do |message| %>
+    <li id="message-id-<%= message.id %>">
+      <%= message.content %>
+      - <%= message.creator.email %>
+    </li>
+  <% end %>
+</ul>
+
+<%= render 'form', team: @team, channel: @channel, message: @message %>

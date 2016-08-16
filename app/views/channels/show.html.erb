@@ -3,8 +3,11 @@
   <%= link_to '(edit)', edit_team_channel_path(@team, @channel) %>
 </h1>
 
-Creator:
-<%= @channel.creator.email if @channel.creator.present? %>
+<p>
+  Creator:
+  <%= @channel.creator.email if @channel.creator.present? %>
+</p>
 
-<br /> <br />
-<%= @name %>
+<p>
+  <%= link_to 'View messages for this channel', team_channel_messages_path(@team, @channel) %>
+</p>
